@@ -1,16 +1,26 @@
 {% if site.JB.comments.provider and page.comments != false %}
 
-{% case site.JB.comments.provider %}
-{% when "disqus" %}
-  {% include JB/comments-providers/disqus %}
-{% when "livefyre" %}
-  {% include JB/comments-providers/livefyre %}
-{% when "intensedebate" %}
-  {% include JB/comments-providers/intensedebate %}
-{% when "facebook" %}
-  {% include JB/comments-providers/facebook %}
-{% when "custom" %}
-  {% include custom/comments %}
-{% endcase %}
+// {% case site.JB.comments.provider %}
+// {% when "disqus" %}
+//   {% include JB/comments-providers/disqus %}
+// {% when "livefyre" %}
+//   {% include JB/comments-providers/livefyre %}
+// {% when "intensedebate" %}
+//   {% include JB/comments-providers/intensedebate %}
+// {% when "facebook" %}
+//   {% include JB/comments-providers/facebook %}
+// {% when "custom" %}
+//   {% include custom/comments %}
+// {% endcase %}
+
+<div id="comments"></div>
+<script>
+  gapi.comments.render('comments', {
+      href: window.location,
+      width: '624',
+      first_party_property: 'BLOGGER',
+      view_type: 'FILTERED_POSTMOD'
+  });
+</script>
 
 {% endif %}

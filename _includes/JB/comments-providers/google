@@ -1,3 +1,4 @@
+<script src="https://apis.google.com/js/plusone.js"></script>
 <div id="comments"></div>
 <script>
   gapi.comments.render('comments', {

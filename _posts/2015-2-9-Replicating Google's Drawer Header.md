@@ -31,8 +31,69 @@ The '+' are where the version numbers go. You can leave it this way but android 
 
 Now I use the same layout for both 21 and previous so mine looks like this:
 
-{% include JB/gist gist_id="d293dd31dea0dff38d1b" %}
-{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %}
+<!-- {% include JB/gist gist_id="d293dd31dea0dff38d1b" %}
+{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %} -->
+
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="178dp">
+
+    <ImageView
+        android:id="@+id/banner_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="@android:color/darker_gray"
+        android:src="@drawable/bg_default_profile_art"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginStart="16dp"
+        app:border_width="2dp"
+        app:border_color="#ffffff"
+        android:src="@drawable/ic_profile_none"/>
+
+    <RelativeLayout
+        android:layout_alignBottom="@+id/banner_image"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <RelativeLayout
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_account"
+                android:layout_below="@id/user_name"
+                android:textColor="@android:color/secondary_text_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+{% endhighlight %}
 
 ###Insert Header into Drawer
 
@@ -46,8 +107,167 @@ Once you add in you default profile picture, default banner picture, and an adap
 
 Now for the fun part. In your main activity where your drawer is going to be we need to set up a log in for the Google Api Client. On connection we will then pull the current person's name, email, banner image, and profile image. What we need to do is set up some implementations for the callbacks (failed and success) and a couple more override classes. Eventually your main activity should look something like this:
 
-{% include JB/gist gist_id="55d63527aedcdd7b425d" %}
-{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %}
+<!-- {% include JB/gist gist_id="55d63527aedcdd7b425d" %}
+{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %} -->
+
+{% highlight java %}
+public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private FragmentManager mFragmentManager;
+    private View mHeaderView;
+
+    private static final int REQUEST_RESOLVE_ERROR = 1001;
+
+    private GoogleApiClient mGoogleApiClient;
+    private boolean mResolvingError = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
+
+        mHeaderView = getLayoutInflater().inflate(R.layout.user_header_layout, null);
+        mFragmentManager = getSupportFragmentManager();
+
+        mGoogleApiClient = buildGoogleApiClient();
+        mGoogleApiClient.connect();
+
+        mDrawerList = (ListView) findViewById(R.id.drawer_listview);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
+                R.string.open, R.string.close);
+        mDrawerToggle.setDrawerIndicatorEnabled(true);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerList.addHeaderView(mHeaderView);
+
+        // set adapter
+        // set onitemclicklistener
+
+    }
+
+    //item click listener
+
+    public GoogleApiClient buildGoogleApiClient() {
+        return new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(Plus.API)
+                .addScope(Plus.SCOPE_PLUS_LOGIN)
+                .build();
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(mDrawerLayout.isDrawerOpen(Gravity.START|Gravity.LEFT)){
+            mDrawerLayout.closeDrawers();
+            return;
+        }
+
+        super.onBackPressed();
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult result) {
+        if (mResolvingError) {
+            // Already attempting to resolve an error.
+            return;
+        } else if (result.hasResolution()) {
+            try {
+                mResolvingError = true;
+                // start and activity to try and fix the login error
+                result.startResolutionForResult(this, REQUEST_RESOLVE_ERROR);
+            } catch (IntentSender.SendIntentException e) {
+                // try logging in again
+                mGoogleApiClient.connect();
+            }
+        } else {
+            mResolvingError = true;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // response from the activity launched by login to get user input
+        // to successfully log in
+        if (requestCode == REQUEST_RESOLVE_ERROR) {
+            mResolvingError = false;
+            if (resultCode == RESULT_OK) {
+                if (!mGoogleApiClient.isConnecting() && !mGoogleApiClient.isConnected()) {
+                    mGoogleApiClient.connect();
+                }
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onConnectionSuspended(int cause) {
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        // get current users account
+        Person user = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
+        if (user != null) {
+            // if the user has a profile image
+            if (user.getImage().hasUrl()) {
+                String portrait = user.getImage().getUrl();
+                //load into the portrait imageview
+                Picasso.with(this)
+                        //remove parameters since the image url makes the image really small
+                        .load(portrait.split("\\?")[0])
+                        .into((ImageView) mHeaderView.findViewById(R.id.user_image));
+            }
+
+            // load the banner into the background
+            Picasso.with(this)
+                    .load(user.getCover().getCoverPhoto().getUrl())
+                    .into((ImageView) mHeaderView.findViewById(R.id.banner_image));
+
+            // set the account name
+            ((TextView) findViewById(R.id.user_account))
+                    .setText(Plus.AccountApi.getAccountName(mGoogleApiClient));
+
+            // set the user's name
+            Person.Name userName = user.getName();
+            ((TextView) findViewById(R.id.user_name))
+                    .setText(String.format("%s %s", userName.getGivenName(), userName.getFamilyName()));
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+    }
+}
+{% endhighlight %}
 
 ###Success
 

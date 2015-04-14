@@ -6,7 +6,7 @@ categories: lessons
 description:
 tags: [intro, beginner, jekyll, tutorial]
 image:
-  feature: bg-new.jpg
+  feature: {{ site.url }}/images/bg-new.jpg
   credit:
   creditlink:
 comments: true

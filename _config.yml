@@ -10,6 +10,27 @@ highlighter: pygments
 #
 title : w9jds
 tagline: Site Tagline
+
+# Owner/author information
+owner:
+  name: Jeremy Shore
+  avatar: avatar.png
+  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  email: xboxmusicn3rd@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter: xboxmusicn3rd
+  facebook: w9jds
+  github: w9jds
+  stackexchange: w9jds
+  linkedin: w9jds
+  # instagram:
+  # flickr:
+  # tumblr:
+  # google plus id, include the '+', eg +mmistakes
+  google_plus: +107409246377739765003
+
+
+
 author :
   name : Jeremy Shore
   email : xboxmusicn3rd@gmail.com
@@ -127,3 +148,18 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Chicago
+future:      true
+pygments:    true
+# markdown:    kramdown
+
+# Amount of posts to show on home page
+paginate: 5

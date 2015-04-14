@@ -19,7 +19,7 @@ Today I'm going to go over how to replicate the header you find at the top of th
 
 First thing you are going to need is to set up a layout that will be the header for the drawer. I personally use Piccaso to load the images. You can either use a custom transform to change the user image to a circle or you can use a circle image view. I chose the circle image view since it makes the default image circle as well. For both of these add these two dependencies to your application build.gradle:
 
-{% highlight java %}
+{% highlight groovy %}
 compile 'com.squareup.picasso:picasso:+'
 compile 'de.hdodenhof:circleimageview:+'
 {% endhighlight %}
@@ -30,8 +30,8 @@ The '+' are where the version numbers go. You can leave it this way but android 
 
 Now I use the same layout for both 21 and previous so mine looks like this:
 
-<!-- {% include JB/gist gist_id="d293dd31dea0dff38d1b" %}
-{% include JB/gist gist_id="d293dd31dea0dff38d1b" gist_file="jekyll-bootstrap.js" %} -->
+{% include JB/gist gist_id="d293dd31dea0dff38d1b" %}
+{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %}
 
 ###Insert Header into Drawer
 
@@ -45,8 +45,8 @@ Once you add in you default profile picture, default banner picture, and an adap
 
 Now for the fun part. In your main activity where your drawer is going to be we need to set up a log in for the Google Api Client. On connection we will then pull the current person's name, email, banner image, and profile image. What we need to do is set up some implementations for the callbacks (failed and success) and a couple more override classes. Eventually your main activity should look something like this:
 
-<!-- {% include JB/gist gist_id="55d63527aedcdd7b425d" %}
-{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %} -->
+{% include JB/gist gist_id="55d63527aedcdd7b425d" %}
+{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %}
 
 ###Success
 

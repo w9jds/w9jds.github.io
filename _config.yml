@@ -143,7 +143,6 @@ JB :
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Chicago
 future:      true
-pygments:    true
 markdown:    kramdown
 sass:
   sass_dir: _sass

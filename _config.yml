@@ -145,8 +145,6 @@ timezone:    America/Chicago
 future:      true
 pygments:    true
 markdown:    kramdown
-gems:
-  - jekyll-sitemap
 sass:
   sass_dir: _sass
   style: compressed

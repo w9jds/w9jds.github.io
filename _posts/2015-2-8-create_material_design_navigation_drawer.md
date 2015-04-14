@@ -22,9 +22,10 @@ Your targeting api should probably be v21+ (or android 5.0+) and you can either 
 
 {% highlight groovy %}
 
+// + is where the version is (or leave it so it auto updates for you)
 compile 'com.android.support:appcompat-v7:+'
 
-(% endhighlight %)
+{% endhighlight %}
 
 Along with making sure your main theme is an `AppCompat` theme, not the device default theme.Inside of that theme make sure you have `windowActionBar` set to false.
 

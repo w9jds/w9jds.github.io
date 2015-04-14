@@ -22,7 +22,6 @@ Your targeting api should probably be v21+ (or android 5.0+) and you can either 
 
 {% highlight groovy %}
 
-// + is where the version is (or leave it so it auto updates for you)
 compile 'com.android.support:appcompat-v7:+'
 
 (% endhighlight %)

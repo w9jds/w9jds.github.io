@@ -2,21 +2,24 @@
 
 <html class="no-js" lang="en">
   <head>
-  {% include head.html %}
+  {% include custom/head.html %}
   </head>
 
   <body id="page" {% if page.image.feature %}class="feature"{% endif %}>
 
-    {% include browser-upgrade.html %}
-    {% include navigation.html %}
+    {% include custom/navigation.html %}
 
     {% if page.image.feature %}
-    <div class="entry-header">
-      {% if page.image.credit %}<div class="image-credit">Image source: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></div><!-- /.image-credit -->{% endif %}
-      <div class="entry-image">
-        <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
-      </div><!-- /.entry-image -->
-    </div><!-- /.entry-header -->
+      <div class="entry-header">
+        {% if page.image.credit %}
+          <div class="image-credit">Image source:
+            <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a>
+          </div>
+        {% endif %}
+        <div class="entry-image">
+          <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
+        </div>
+      </div>
     {% endif %}
 
     <div id="main" role="main">

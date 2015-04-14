@@ -1,5 +1,7 @@
 <meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
+<title>
+  {% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}
+</title>
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 {% if page.tags %}
   <meta name="keywords" content="{{ page.tags | join: ', ' }}">
@@ -32,9 +34,12 @@
   <meta name="msvalidate.01" content="{{ site.bing_verify }}">
 {% endif %}
 
-{% capture canonical %}{{ site.url }}
+{% capture canonical %}
+  {{ site.url }}
   {% if site.permalink contains '.html' %}
-    {{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}
+    {{ page.url }}
+  {% else %}
+    {{ page.url | remove:'index.html' | strip_slash }}
   {% endif %}
 {% endcapture %}
 <link rel="canonical" href="{{ canonical }}">

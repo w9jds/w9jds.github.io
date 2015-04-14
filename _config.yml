@@ -37,7 +37,7 @@ owner:
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 url: http://w9jds.github.io
-background: bg-new.jpg
+background: witewall_3.png
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #

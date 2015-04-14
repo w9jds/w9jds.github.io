@@ -1,20 +1,21 @@
-___
-#
-#
-___
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
 
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "vendor/font-awesome/font-awesome";
-@import "vendor/magnific-popup/magnific-popup";
+
+// @import "variables";
+// @import "mixins";
+// @import "reset";
+// @import "vendor/font-awesome/font-awesome";
+// @import "vendor/magnific-popup/magnific-popup";
 @import "site";
-@import "typography";
-@import "pygments";
-@import "coderay";
-@import "gist";
-@import "grid";
-@import "elements";
-@import "animations";
-@import "dl-menu";
+// @import "typography";
+// @import "pygments";
+// @import "coderay";
+// @import "gist";
+// @import "grid";
+// @import "elements";
+// @import "animations";
+// @import "dl-menu";
 @import "page";

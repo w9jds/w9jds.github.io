@@ -2,8 +2,8 @@
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title
 
-# exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-# highlighter: pygments
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+highlighter: pygments
 
 title:            Site Title
 description:      Describe your website here.
@@ -126,8 +126,8 @@ JB :
   # Set 'provider' to the sharing provider you want to use.
   # Set 'provider' to false to turn sharing off globally.
   #
-  sharing :
-    provider : false
+  # sharing :
+  #   provider : false
 
   # Settings for all other include helpers can be defined by creating
   # a hash with key named for the given helper. ex:
@@ -151,20 +151,3 @@ sass:
 
 # Amount of posts to show on home page
 paginate: 5
-
-# kramdown:
-#   auto_ids: true
-#   footnote_nr: 1
-#   entity_output: as_char
-#   toc_levels: 1..6
-#   use_coderay: true
-#
-#   coderay:
-#     coderay_line_numbers: nil
-#     coderay_line_numbers_start: 1
-#     coderay_tab_width: 4
-#     coderay_bold_every: 10
-#     coderay_css: class
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

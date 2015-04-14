@@ -29,16 +29,16 @@ compile 'com.android.support:appcompat-v7:+'
 
 Along with making sure your main theme is an `AppCompat` theme, not the device default theme.Inside of that theme make sure you have `windowActionBar` set to false.
 
-{% highlight xml %}
+``` xml
 <item name="windowActionBar">false</item>
-{% endhighlight %}
+```
 
 ### Replacing the ActionBar
 
 Lets start off with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `ActionBarActivity`.
 
-{% highlight java %}
 
+``` java
 public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +46,12 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 }
-
-{% endhighlight %}
+```
 
 Now that our activity extends `ActionBarActivity` we need to go and add a `Toolbar` to this activity's layout. It should look something like this:
 
-{% highlight xml %}
 
+``` xml
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -81,22 +80,18 @@ Now that our activity extends `ActionBarActivity` we need to go and add a `Toolb
     </FrameLayout>
 
 </LinearLayout>
-
-{% endhighlight %}
+```
 
 We have the `Toolbar` in our layout, but now we need to hook it up to your activity. So add this to your `onCreate` method.
 
-{% highlight java %}
-
+``` java
 Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
 setSupportActionBar(toolbar);
-
-{% endhighlight %}
+```
 
 The final thing that is missing for our `Toolbar` is the styles. This consists of things like background color, popover color, height, button styles, etc. The next style is for v21 *only*. You'll want use this in a `styles-v21.xml` file.
 
-{% highlight xml %}
-
+``` xml
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light">
@@ -129,15 +124,13 @@ The final thing that is missing for our `Toolbar` is the styles. This consists o
     </style>
 
 </resources>
-
-{% endhighlight %}
+```
 
 ### Setup the Navigation Drawer
 
 First, we need to add in the drawer to our layout. So make your main activity's layout look something like this:
 
-{% highlight xml %}
-
+``` xml
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -197,13 +190,11 @@ First, we need to add in the drawer to our layout. So make your main activity's 
     </android.support.v4.widget.DrawerLayout>
 
 </RelativeLayout>
-
-{% endhighlight %}
+```
 
 We have the layout, but now we need to hook it up inside the activity. So we need to add in handling for back button, configuration changes, and toggling. You main activity should start to look something like this:
 
-{% highlight java %}
-
+``` java
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -244,8 +235,7 @@ public class MainActivity extends ActionBarActivity {
         super.onBackPressed();
     }
 }
-
-{% endhighlight %}
+```
 
 With this, your navigation drawer will now but up to the bottom of your status bar. However, in the material design principles they make it clear they want a transparent status bar to draw **OVER** the drawer.
 
@@ -254,8 +244,7 @@ With this, your navigation drawer will now but up to the bottom of your status b
 
 First you will need to set up a couple properties in a special styles-v21.xml file so that we can force it to be full screen. You should only need `windowDrawsSystemBarBackgrounds` but I like to set a couple other for transitions and stuff so set these:
 
-{% highlight xml %}
-
+``` xml
 <resources>
 
     <!--added specifically for handling material design transitions and full window view-->
@@ -296,8 +285,7 @@ First you will need to set up a couple properties in a special styles-v21.xml fi
     </style>
 
 </resources>
-
-{% endhighlight %}
+```
 
 With those styles, you just need to make sure the `DrawerLayout` in your main activity has the `fitsSystemWindow` attribute set to true. This should make the drawer go your statusbar correctly. There is one problem though. Since the statusbar is being drawn there android assumes you don't want your content to start until under your statusbar. So if you put an image on the top for the header (like Google does), you would get a white bar above it. So to fix this you need to add in a custom layout called `ScrimInsetsFrameLayout` which insets the view to get rid of that white bar. That class can be found in this gist:
 
@@ -306,8 +294,7 @@ With those styles, you just need to make sure the `DrawerLayout` in your main ac
 
 Now just go and update the layout for your activity to use this layout to get a result somewhat like this:
 
-{% highlight xml %}
-
+``` xml
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -381,7 +368,6 @@ Now just go and update the layout for your activity to use this layout to get a 
     </android.support.v4.widget.DrawerLayout>
 
 </RelativeLayout>
-
-{% endhighlight %}
+```
 
 and now you have a drawer that slides under the status bar exactly how the drawer is depicted in the material design guidelines!

@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Replicating Google's Drawer Headers
 categories: Walkthroughs
 description: Replicating Google's Drawer Headers in Material Design.
 tags: [Android, 5.0, Design, Drawer, Google, Material, Walkthrough]

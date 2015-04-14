@@ -31,11 +31,7 @@ The '+' are where the version numbers go. You can leave it this way but android 
 
 Now I use the same layout for both 21 and previous so mine looks like this:
 
-<!-- {% include JB/gist gist_id="d293dd31dea0dff38d1b" %}
-{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %} -->
-
 {% highlight xml %}
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -106,9 +102,6 @@ Once you add in you default profile picture, default banner picture, and an adap
 ###Populating Drawer with user's Google Account
 
 Now for the fun part. In your main activity where your drawer is going to be we need to set up a log in for the Google Api Client. On connection we will then pull the current person's name, email, banner image, and profile image. What we need to do is set up some implementations for the callbacks (failed and success) and a couple more override classes. Eventually your main activity should look something like this:
-
-<!-- {% include JB/gist gist_id="55d63527aedcdd7b425d" %}
-{% include JB/gist gist_id="55d63527aedcdd7b425d" gist_file="jekyll-bootstrap.js" %} -->
 
 {% highlight java %}
 public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {

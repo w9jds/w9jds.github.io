@@ -33,7 +33,7 @@ Along with making sure your main theme is an `AppCompat` theme, not the device d
 
 ### Replacing the ActionBar
 
-Lets start off with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that ActionBar we need to change the activity to `ActionBarActivity`.
+Lets start off with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `ActionBarActivity`.
 
 {% highlight java %}
 public class MainActivity extends ActionBarActivity {
@@ -241,7 +241,6 @@ With this, your navigation drawer will now but up to the bottom of your status b
 First you will need to set up a couple properties in a special styles-v21.xml file so that we can force it to be full screen. You should only need `windowDrawsSystemBarBackgrounds` but I like to set a couple other for transitions and stuff so set these:
 
 {% highlight xml %}
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!--added specifically for handling material design transitions and full window view-->

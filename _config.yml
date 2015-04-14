@@ -5,17 +5,16 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
 
-title:            Site Title
-description:      Describe your website here.
-disqus_shortname: hpstrtheme
-reading_time:     true
+title:
+description: Describe your website here.
+reading_time: true
 words_per_minute: 200
 
 # Owner/author information
 owner:
   name: Jeremy Shore
   avatar: avatar.png
-  bio:
+  bio: I am an extremely enthusiastic developer, and early adopter.
   email: xboxmusicn3rd@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter: xboxmusicn3rd
@@ -24,7 +23,7 @@ owner:
   stackexchange: w9jds
   linkedin: w9jds
   google_plus: +107409246377739765003
-    # instagram:
+  instagram: w9jds
     # flickr:
     # tumblr:
 

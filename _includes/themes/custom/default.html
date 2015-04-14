@@ -1,26 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     {% include custom/head.html %}
-
-    <meta name="author" content="{{ site.author.name }}">
   </head>
 
-  <body>
-    <div id="wrap">
-
-      {% include custom/navigation.html %}
-
-      <div class="container">
-        {{ content }}
-      </div>
-
-    </div>
-
-    {% include JB/analytics %}
-    {% include custom/scripts.html %}
-  </body>
+  {{ content }}
+  
 </html>

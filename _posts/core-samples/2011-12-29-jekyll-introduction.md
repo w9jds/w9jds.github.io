@@ -6,9 +6,9 @@ categories: lessons
 description:
 tags: [intro, beginner, jekyll, tutorial]
 image:
-  feature: http://w9jds.github.io/images/bg-new.jpg
-  credit:
-  creditlink:
+  feature: spaceone.jpg
+  credit: CCP
+  creditlink: EveOnline.com
 comments: true
 share: true
 ---

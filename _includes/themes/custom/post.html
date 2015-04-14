@@ -69,12 +69,16 @@
               <span class="fn">{{ site.owner.name }}</span>
             </span>
           {% endif %}
+
+          {% if page.comments != false %}
+            {% include JB/comments %}
+          {% endif %}
+
           {% if page.share != false %}
             {% include custom/social-share.html %}
           {% endif %}
         </footer>
       </div>
-      {% include JB/comments %}
 
       {% if site.related_posts.size > 0 %}
         {% include custom/read-more.html %}
@@ -88,7 +92,6 @@
     </footer>
   </div>
 
-  {% include JB/analytics %}
-  {% include custom/scripts.html %}
 
+  {% include custom/scripts.html %}
 </body>

@@ -378,6 +378,8 @@ header .entry-meta {
 	}
 }
 .entry-image-index {
+	max-height: 260px;
+	overflow: hidden;
 	margin-top: -25px;
 	margin-left: -15px;
 	margin-right: -15px;

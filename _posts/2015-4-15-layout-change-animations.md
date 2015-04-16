@@ -115,4 +115,6 @@ messageView.startAnimation(animation);
 
 Both of these will get you the same kind of result, and can be built upon. Be careful though, it doesn't always work in all places. When I made this custom animation class it doesn't work when I used it in a drawer, but `ValueAnimator`. Here is a gif of what it would look like. (keep in mind the gif makes it look choppy when it really isn't).
 
-![Sliding Animation]({{ site.url }}/assets/sliding_animation.gif)
+<p align="center">
+  <img src="{{ site.url }}/assets/sliding_animation.gif" alt="sliding_animation"/>
+</p>

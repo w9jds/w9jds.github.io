@@ -59,7 +59,7 @@ set.start();
 
 ### Custom Animation
 
-A second more extremely solution (that doesn't seem to always work the way you want) is to create a custom class that extends `Animation`. This is much more flexible and works almost exactly the same as the above `ValueAnimator`. You can make the constructor take in the new height and old height. This also uses the interpolator so you can still set a custom equation. Here is a basic example:
+A second more extreme solution, that doesn't seem to always work the way you want, is to create a custom class that extends `Animation`. This is much more flexible and works almost exactly the same as the above `ValueAnimator`. You can make the constructor take in the new height and old height. This also uses the interpolator so you can still set a custom equation. Here is a basic example:
 
 {% highlight java %}
 public class SlideAnimation extends Animation {

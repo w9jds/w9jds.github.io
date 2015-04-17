@@ -51,7 +51,7 @@ AnimatorSet set = new AnimatorSet();
 // since this is the only animation we are going to run we just use
 // play
 set.play(slideAnimator);
-// this is how
+// this is how you set the parabola which controls acceleration
 set.setInterpolator(new AccelerateDecelerateInterpolator());
 // start the animation
 set.start();
@@ -113,7 +113,7 @@ messageView.startAnimation(animation);
 
 ### Conclusion
 
-Both of these will get you the same kind of result, and can be built upon. Be careful though, it doesn't always work in all places. When I made this custom animation class it doesn't work when I used it in a drawer, but `ValueAnimator`. Here is a gif of what it would look like. (keep in mind the gif makes it look choppy when it really isn't).
+Both of these will get you the same kind of result, and can be built upon. Be careful though, it doesn't always work in all places. When I made this custom animation class it doesn't work when I used it in a drawer, but `ValueAnimator` did. Here is a gif of what it would look like. (keep in mind the gif makes it look choppy when it really isn't).
 
 <p align="center">
   <img src="{{ site.url }}/assets/sliding_animation.gif" alt="sliding_animation"/>

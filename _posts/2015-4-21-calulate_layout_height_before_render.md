@@ -25,7 +25,7 @@ The first one is measuring out a layout that we know exactly what the height and
 {% highlight java %}
 
 layout.measure(View.MeasureSpec.makeMeasureSpec(640, View.MeasureSpec.EXACTLY),
-View.MeasureSpec.makeMeasureSpec(360, View.MeasureSpec.EXACTLY));
+        View.MeasureSpec.makeMeasureSpec(360, View.MeasureSpec.EXACTLY));
 
 {% endhighlight %}
 

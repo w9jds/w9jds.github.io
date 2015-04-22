@@ -35,11 +35,11 @@ Along with making sure your main theme is an `AppCompat` theme, not the device d
 
 ### Replacing the ActionBar
 
-Lets start off with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `ActionBarActivity`.
+Lets start off with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `AppCompatActivity`.
 
 {% highlight java %}
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
 
 {% endhighlight %}
 
-Now that our activity extends `ActionBarActivity` we need to go and add a `Toolbar` to this activity's layout. It should look something like this:
+Now that our activity extends `AppCompatActivity` we need to go and add a `Toolbar` to this activity's layout. It should look something like this:
 
 {% highlight xml %}
 
@@ -204,7 +204,7 @@ We have the layout, but now we need to hook it up inside the activity. So we nee
 
 {% highlight java %}
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

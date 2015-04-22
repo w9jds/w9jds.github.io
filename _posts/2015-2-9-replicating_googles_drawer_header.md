@@ -104,7 +104,7 @@ Once you add in you default profile picture, default banner picture, and an adap
 Now for the fun part. In your main activity where your drawer is going to be we need to set up a log in for the Google Api Client. On connection we will then pull the current person's name, email, banner image, and profile image. What we need to do is set up some implementations for the callbacks (failed and success) and a couple more override classes. Eventually your main activity should look something like this:
 
 {% highlight java %}
-public class MainActivity extends ActionBarActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;

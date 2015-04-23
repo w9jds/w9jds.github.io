@@ -99,8 +99,7 @@ The final thing that is missing for our `Toolbar` is the styles. This consists o
 
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="windowActionBar">false</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/main_blue</item>
         <item name="colorPrimaryDark">@color/main_blue_dark</item>
         <item name="colorAccent">@color/main_blue</item>
@@ -269,7 +268,7 @@ First you will need to set up a couple properties in a special styles-v21.xml fi
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
     </style>
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/main_blue</item>
         <item name="colorPrimaryDark">@color/main_blue_dark</item>

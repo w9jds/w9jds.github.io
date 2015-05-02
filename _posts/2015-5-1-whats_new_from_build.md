@@ -37,7 +37,7 @@ The first thing that Microsoft pushed out was something called Visual Studio Cod
 
 Yes, you heard that right.
 
-This editor is built on the same platform that other popular editors are built on top of. Like Github's Atom editor. What sets it apart though is that they brought some of the power from Visual Studio with it. Intellisense is extremely good, and you can deploy and debug code directly from the editor. The supported deployable code bases at the moment are ASP.Net and Node.js but they plan on adding much more.
+This editor is built on the same platform that other popular editors are built on top of. Like Github's Atom editor. What sets it apart though is that they brought some of the power from Visual Studio with it. Intellisense is extremely good, and you can deploy and debug code directly from the editor. The supported deployable code bases at the moment are ASP.Net and Node.js but they plan on adding much more. We even get Gulp tasks, Git integration, and more! 
 
 You also read that correctly as well. Microsoft has released an editor with Visual Studio's Roslyn built into it for both Mac and Linux. This is just a stepping stone to their greater vision of allowing any kind of development on all platforms.
 

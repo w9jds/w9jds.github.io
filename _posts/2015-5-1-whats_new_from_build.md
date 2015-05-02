@@ -52,7 +52,7 @@ They moved on to then show off some of the new renaming systems. When you do a r
 
 That brings me to error handling. There where a huge amount of error handling changes that they showed off, but in general `ctrl + .` is your best friend. It can do way more for you than it ever could.
 
-Another big announcement was from the game section. Visual Studio now has an offical extension that allows you to create Minecraft Mods! Yup, Minecraft Mods. Instead of having to use that dreadfully awesome Eclipse you can use these custom project types with amazing intellisense and some sdks to help you get started on your very first or most advanced mod! On top of that you can even debug and run it directly from Visual Studio. How cool is that?! You can find the extension here: [Get Minecraft Extension!](https://visualstudiogallery.msdn.microsoft.com/043ab247-8771-4bb1-92af-d76e542724ad)
+Another big announcement was from the game section. Visual Studio now has an offical extension that allows you to create Minecraft Mods! Yup, Minecraft Mods. Instead of having to use that dreadfully awful Eclipse you can use these custom project types with amazing intellisense and some sdks to help you get started on your very first or most advanced mod! On top of that you can even debug and run it directly from Visual Studio. How cool is that?! You can find the extension here: [Get Minecraft Extension!](https://visualstudiogallery.msdn.microsoft.com/043ab247-8771-4bb1-92af-d76e542724ad)
 
 We also finally have an offical Github Extension directly built into Visual Studio! This is part of the Team explorer and bring full support for handling, cloning, and working with all of you github repos.
 

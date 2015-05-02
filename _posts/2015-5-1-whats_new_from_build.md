@@ -174,7 +174,7 @@ if ((Guid)keys?["id"] == Guid.Empty)
 
 {% endhighlight %}
 
-Finally the last one I'm going to go over is for async methods. Right now you can't really use an await inside of a `case` or `finally`. However, starting now you can actually do just that! No more of that discusting workarounds that you had to come up with to get around it. They even added the ability to append the `case` with a `when` after it to make it more specific. Like so:
+Finally the last one I'm going to go over is for async methods. Right now you can't really use an await inside of a `case` or `finally`. However, starting now you can actually do just that! No more of that disgusting workarounds that you had to come up with to get around it. They even added the ability to append the `case` with a `when` after it to make it more specific. Like so:
 
 {% highlight c# %}
 

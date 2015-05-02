@@ -41,7 +41,7 @@ This editor is built on the same platform that other popular editors are built o
 
 You also read that correctly as well. Microsoft has released an editor with Visual Studio's Roslyn built into it for both Mac and Linux. This is just a stepping stone to their greater vision of allowing any kind of development on all platforms.
 
-Check it out here: http://code.visualstudio.com
+Check it out here: [Get Visual Studio Code!](http://code.visualstudio.com)
 
 ### Visual Studio
 Microsoft also showed off a new Visual Studio and Blend as well. Coming with Visual Studio 2015 is their new open source compiler Roslyn, along with a whole new IDE. For people that have been using Visual Studio for years, it doesn't look to new, but they built it from the ground up and added LOADS of new features. Unfortunately I can't cover all of them, but I can hit some of the big ones.
@@ -51,6 +51,12 @@ First is the debugger. You are now able to edit code on the fly while you are de
 They moved on to then show off some of the new renaming systems. When you do a rename you no longer have to deal with that annoying popup window, you can just do it inline without having to leave your keyboard. They even went a step farther to automatically look for conflicts and try to help you solve them. Renaming a new variable to the same name of a property in your object? Oh, that is easy to fix we can just add a `this.` in front of the old use of that name.
 
 That brings me to error handling. There where a huge amount of error handling changes that they showed off, but in general `ctrl + .` is your best friend. It can do way more for you than it ever could.
+
+Another big announcement was from the game section. Visual Studio now has an offical extension that allows you to create Minecraft Mods! Yup, Minecraft Mods. Instead of having to use that dreadfully awesome Eclipse you can use these custom project types with amazing intellisense and some sdks to help you get started on your very first or most advanced mod! On top of that you can even debug and run it directly from Visual Studio. How cool is that?! You can find the extension here: [Get Minecraft Extension!](https://visualstudiogallery.msdn.microsoft.com/043ab247-8771-4bb1-92af-d76e542724ad)
+
+We also finally have an offical Github Extension directly built into Visual Studio! This is part of the Team explorer and bring full support for handling, cloning, and working with all of you github repos.
+
+Finally, They announced that they are partnering with Docker to bring offical Docker support to Visual Studio. You can now install the extension and you can build and publish ASP.Net v5 web or console apps directly to a container running on a Linux VM. You can find this extension here: [Get Docker Extension](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0)
 
 ### C# and XAML
 With .Net 6 they aren't going to be changing so much that it will cause us to relearn things all over again. Such a relief right? They even made some quality of life changes to help make our lives easier. Keep in mind these are just a few of the big ones, there are so many more that I won't cover.

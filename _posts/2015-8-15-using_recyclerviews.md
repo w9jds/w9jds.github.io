@@ -145,6 +145,7 @@ With that you are all set!
 
 I did end up making an `EnhancedRecyclerViewAdapter` that you can throw into your appliation so that all you do is make an adapter and it handles everything for you if you extend it. It can be found here:
 
-https://gist.github.com/w9jds/67a020b2c27a91c434c8
+{% include JB/gist gist_id="67a020b2c27a91c434c8" %}
+{% include JB/gist gist_id="67a020b2c27a91c434c8" gist_file="jekyll-bootstrap.js" %}
 
 I will be creating this along with a couple more controls into a library for use through maven in the future, but until then you can just include that into your project.

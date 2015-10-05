@@ -38,7 +38,7 @@ Note, for this walkthrough I am setting it up `windowEnterTransition` and `windo
 ##Setting up your layout elements
 So we need to let Android know what elements we want to translate to the next view. Starting in api 21 there is a new tag called `transitionName`. Now since this is api 21+, if you support lower versions you do need to make a `*-v21.xml` file for your layout. Make a string value in your `strings.xml` file so you can use it in code and multiple layouts easily. Once you have the names, we can go into the ListView item's layout and add the `transitionName` tag to the elements we want to preserve and set them to the string values we saved. It should look something like this:
 
-{$ highlight xml %}
+{% highlight xml %}
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
@@ -90,7 +90,7 @@ So we need to let Android know what elements we want to translate to the next vi
 
 Now do the same thing, but on the layout that will be used on the activity you are transitioning to. Use the same string value on the item that will show the same exact content as the previous page. So the header of my mail message page looks something like this:
 
-{$ highlight xml %}
+{% highlight xml %}
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -145,7 +145,7 @@ Now do the same thing, but on the layout that will be used on the activity you a
 ##Starting the new activity
 Alright, so you have all the layout changes you had to make to put this transition in place. Now all you have to do is properly create the intent to start your new activity. Here we need to add a special option bunle to the application compat start activity call. It is pretty simple too. What you need to is to make sure to pull in `android.support.v4.util.Pair` into the class you are going to make the `startActivity` call from. With that you will then build your intent and call like this:
 
-{$ highlight java %}
+{% highlight java %}
 Intent intent = new Intent(getActivity(), MessageActivity.class);
 intent.putExtra(Constants.CURRENT_MESSAGE, header.getMessageId());
 

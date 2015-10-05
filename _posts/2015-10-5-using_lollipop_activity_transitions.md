@@ -3,7 +3,7 @@ layout: post
 title: Using Lollipop Activity Transitions
 categories: Walkthroughs
 description: One thing I rarely see in applications on Lollipop are the new activity translations. Specifically, the ones that reuse elements from previous activity.
-tags: [Android, RecyclerViews, Animations]
+tags: [Android, Animations]
 image:
   feature: spaceone.jpg
   credit: CCP
@@ -18,19 +18,19 @@ Now that we are starting to see Lollipop pick up a larger part of the market, we
 ##When to use it
 This is used when you are sharing UI elements between your starting activity and your finishing activity. For instance, you have a listview with all of your emails in it. For each item in the list you have the sender image to the left with the sender name and subject line. When you click that item you are going to the content of that message, so the header of that activity is going to contain the sender name, image, and mail subject. So instead of just transitioning to the next page we can have the elements from the starting activity slide into position for the contents activity. It should look something like this:
 
-![Scene Transition Animation]({{ site.url }}/assets/open_mail_transition.gif)
+{% video {{ site.url }}/assets/open_mail_message.mp4 %}
 
 ##Setting up your style
 Since this feature is Lollipop specific, it would stand to reason that you need to make sure to only set it up for 5.0+ devices. So we need to set up a style inside of our `styles-v21.xml` file (if you are only supporting versions 21+ then you can place this in your `styles.xml` file). In your application style we need to set up a few things so the application knows about the transition system. One of your main app styles should contain these tags:
 
 {% highlight xml %}
-    <item name="android:windowContentTransitions">true</item>
-    <item name="android:windowAllowEnterTransitionOverlap">true</item>
-    <item name="android:windowAllowReturnTransitionOverlap">true</item>
-    <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-    <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
-    <item name="android:windowEnterTransition">@android:transition/slide_bottom</item>
-    <item name="android:windowExitTransition">@android:transition/slide_bottom</item> 
+<item name="android:windowContentTransitions">true</item>
+<item name="android:windowAllowEnterTransitionOverlap">true</item>
+<item name="android:windowAllowReturnTransitionOverlap">true</item>
+<item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+<item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+<item name="android:windowEnterTransition">@android:transition/slide_bottom</item>
+<item name="android:windowExitTransition">@android:transition/slide_bottom</item> 
 {% endhighlight %}
 
 Note, for this walkthrough I am setting it up `windowEnterTransition` and `windowExitTransition` to have the new activity slide up from the bottom if we are preserving some elements. You are more than welcome to change this later.

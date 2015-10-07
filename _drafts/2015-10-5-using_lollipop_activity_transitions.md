@@ -3,7 +3,7 @@ layout: post
 title: Using Lollipop Activity Transitions
 categories: Walkthroughs
 description: One thing I rarely see in applications on Lollipop are the new activity translations. Specifically, the ones that reuse elements from previous activity.
-tags: [Android, Animations]
+tags: [Android, Animations, Walkthrough]
 image:
   feature: spaceone.jpg
   credit: CCP
@@ -13,7 +13,7 @@ share: true
 ---
 
 ##Overview
-Now that we are starting to see Lollipop pick up a larger part of the market, we are seeing applications start to tailor their apps to these users as well. However, one thing I tend to rarely see are the new transitions that Lollipop introduced for when you are switching between activities. Specifically the transitions that happen when you are reusing elements from the previous activity in the new activity. These transitions are called `SceneTransitionAnimation`. I will be going over how to set up a pretty basic one that should be used on basically all listview activities to the content activity.
+Now that we are starting to see Lollipop pick up a larger part of the market, we are seeing applications start to tailor their apps to these users as well. However, one thing I tend to rarely see are the new transitions that Lollipop introduced for when you are switching between activities. Specifically the transitions that happen when you are reusing elements from the previous activity in the new activity. These transitions are called `SceneTransitionAnimation`. I will be going over how to set up a basic one that should be used on listview activities to the content activity.
 
 ##When to use it
 This is used when you are sharing UI elements between your starting activity and your finishing activity. For instance, you have a listview with all of your emails in it. For each item in the list you have the sender image to the left with the sender name and subject line. When you click that item you are going to the content of that message, so the header of that activity is going to contain the sender name, image, and mail subject. So instead of just transitioning to the next page we can have the elements from the starting activity slide into position for the contents activity. It should look something like this:
@@ -21,7 +21,7 @@ This is used when you are sharing UI elements between your starting activity and
 {% video {{ site.url }}/assets/open_mail_message.mp4 %}
 
 ##Setting up your style
-Since this feature is Lollipop specific, it would stand to reason that you need to make sure to only set it up for 5.0+ devices. So we need to set up a style inside of our `styles-v21.xml` file (if you are only supporting versions 21+ then you can place this in your `styles.xml` file). In your application style we need to set up a few things so the application knows about the transition system. One of your main app styles should contain these tags:
+Since this feature is Lollipop specific, it would stand to reason that you need to make sure to only set it up for 5.0+ devices. So we need to set up a few things inside of our `styles-v21.xml` file (if you are only supporting versions 21+ then you can place this in your `styles.xml` file). One of your main app styles should contain these tags:
 
 {% highlight xml %}
 <item name="android:windowContentTransitions">true</item>
@@ -36,7 +36,7 @@ Since this feature is Lollipop specific, it would stand to reason that you need 
 Note, for this walkthrough I am setting it up `windowEnterTransition` and `windowExitTransition` to have the new activity slide up from the bottom if we are preserving some elements. You are more than welcome to change this later.
 
 ##Setting up your layout elements
-So we need to let Android know what elements we want to translate to the next view. Starting in api 21 there is a new tag called `transitionName`. Now since this is api 21+, if you support lower versions you do need to make a `*-v21.xml` file for your layout. Make a string value in your `strings.xml` file so you can use it in code and multiple layouts easily. Once you have the names, we can go into the ListView item's layout and add the `transitionName` tag to the elements we want to preserve and set them to the string values we saved. It should look something like this:
+So we need to let Android know what elements we want to translate to the next view. Starting in api 21 there is a new tag called `transitionName`. Again, if you support lower versions you do need to make a `*-v21.xml` file for your layout. Make a string value in your `strings.xml` file so you can use it in code and multiple layouts easily. Once you have the names, we can go into the ListView item's layout and add the `transitionName` tag to the elements we want to preserve and set them to the string values we saved. It should look something like this:
 
 {% highlight xml %}
 <LinearLayout
@@ -143,7 +143,7 @@ Now do the same thing, but on the layout that will be used on the activity you a
 {% endhighlight %}
 
 ##Starting the new activity
-Alright, so you have all the layout changes you had to make to put this transition in place. Now all you have to do is properly create the intent to start your new activity. Here we need to add a special option bunle to the application compat start activity call. It is pretty simple too. What you need to is to make sure to pull in `android.support.v4.util.Pair` into the class you are going to make the `startActivity` call from. With that you will then build your intent and call like this:
+Alright, so you have all the layout changes you had to make to put this transition in place. Now all you have to do is properly create the intent to start your new activity. Here we need to add a special option bundle to the `ActivityCompat.startActivity` call. It is pretty simple too. You will also need to make sure to pull in `android.support.v4.util.Pair` into the class you are going to make the `startActivity` call from. With that you will then build your intent and call like this:
 
 {% highlight java %}
 Intent intent = new Intent(getActivity(), MessageActivity.class);
@@ -162,4 +162,4 @@ ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimati
 ActivityCompat.startActivity(getActivity(), intent, options.toBundle());
 {% endhighlight %}
 
-All you have to do is add in a new pair for each item you want to use the transition on. So use `findViewById` for each element and then pass in the resolved string you used to it's `transitionName`. That is how simple it is. Almost no effort to add a nice fluid transition between your activities for you users. (Note, I have `getActivity()` above because I make the call from a fragment so make sure to replace those accordingly based on where you are building this).
+All you have to do is add in a new pair for each item you want to use the transition on. So use `findViewById` for each element and then pass in the resolved string you used to it's `transitionName`. That is how simple it is. Almost no effort to add a nice fluid transition between your activities for you users. (Note, I have `getActivity()` above because I'm make the call from a fragment so make sure to replace those accordingly based on where you are building this).

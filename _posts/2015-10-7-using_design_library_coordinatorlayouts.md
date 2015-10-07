@@ -44,7 +44,7 @@ As you can see, it look a lot like a `LinearLayout` or a `FrameLayout`. However,
 I can't stress enough that the behavior has to be set to the direct child element of `CoordinatedLayout`. Even if the element you are putting the tag on doesn't even scroll (like above) it still goes on that `FrameLayout` even though I will be loading a `RecyclerView` in later. This even works if you are loading a `ViewPager` with `Fragments` containing `RecyclerViews` into that `FrameLayout`. Another good example of this is if you are using a `SwipeRefreshLayout`. Since `SwipeRefreshLayout` is the child of `CoordinatedLayout` you need to put it on there. Then the `RecyclerView` contained in it will have the scroll events fire the behavior.
 
 ##Other uses
-`CoordinatedLayout` also allows you to use an achor feature. This anchors `FloatingActionButtons` to a specific location on your screen so when a `SnackBar` appears, the button slides up to stay in the position. This is also a pretty simple item to implement. All it requires are a couple of attributes on your `FloatingActionButton`. Below is a example of how you would anchor it to the bottom right hand side like it is for standard Material Design. This example will anchor it to the list, so that when you scroll it hides:
+`CoordinatedLayout` also allows you to use an anchor feature. This anchors `FloatingActionButtons` to a specific location on your screen so when a `SnackBar` appears, the button slides up to stay in position. This is also a pretty simple item to implement. All it requires are a couple of attributes on your `FloatingActionButton`. Below is a example of how you would anchor it to the bottom right hand side like it is for standard Material Design. This example will anchor it to the list, so that when you scroll it hides:
 
 {% highlight xml %}
 
@@ -61,7 +61,7 @@ I can't stress enough that the behavior has to be set to the direct child elemen
 
 This also works if you want to attach it to the bottom of an action bar that collapses. Instead of having it move up from an item appearing, it follows the bottom of the action bar and disappears when the action bar is completely collapsed.
 
-This also allows for `CollapsingToolbarLayout`. This layout is effected by the scrolling behavior shown above, and allows for the action bar to expand (moving the title with it) and even switch into a parallax mode where the background turns into an image. A good example of this effect is the native Android application. Here is a snippet of xml to show you how to do a parallax version of the Toolbar.
+This also allows for `CollapsingToolbarLayout`. This layout is effected by the scrolling behavior shown above, and allows for the action bar to expand (moving the title with it) and even switch into a parallax mode where the background turns into an image. A good example of this effect is the native Android contacts application. Here is a snippet of xml to show you how to do a parallax version of the Toolbar.
 
 {% highlight xml %}
 

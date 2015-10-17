@@ -5,7 +5,7 @@ categories: Walkthroughs
 description: How to set up your project to use debug and release specific code.
 tags: [Android, Animations, Walkthrough]
 image:
-  feature: space.jpg
+  feature: nasa-nebulas.jpg
 comments: true
 share: true
 ---

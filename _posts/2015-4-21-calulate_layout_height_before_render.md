@@ -18,7 +18,7 @@ Usually when you want to make an animation to show some hidden content, or draw 
 
 ### How it works
 
-We are going to use the built in system for `Views` called `MeasureSpec`. Basically we are going to give the view parameters on how we would want it measured, and it would then go and get the real dimensions for this device. I will give you two examples of this.
+We are going to use the built-in system for `Views` called `MeasureSpec`. Basically we are going to give the view parameters on how we would want it measured, and it would then go and get the real dimensions for this device. I will give you two examples of this.
 
 The first one is measuring out a layout that we know exactly what the height and width we want it to be set to.
 

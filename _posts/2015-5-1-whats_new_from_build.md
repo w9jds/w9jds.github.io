@@ -19,7 +19,7 @@ What we got? So much more.
 ### Windows Phone
 Lets start with what new things we have for Windows Phone. The biggest announcement was that Microsoft will now support you bring over Objective C (from your iOS apps) and Java (from your Android apps). This means that if you have an iOS or Android app you can bring it over to Windows Phone while changing very little amount of code. The best example they gave was Candy Crush by King. That is an iOS app brought over to Windows Phone. 
 
-For iOS you can literally pull the iOS project into Visual Studio, and with a few tweeks should be able to get it fully running without a huge refactoring. 
+For iOS you can literally pull the iOS project into Visual Studio, and with a few tweaks should be able to get it fully running without a huge refactoring. 
 
 For Android you apparently don't even have to bring it into Visual Studio. You are supposed to be able to just build it for Windows Phone from Android Studio (though I didn't see anything more about it).
 
@@ -30,7 +30,7 @@ When Microsoft showed off Hololens at the beginning of the year, a lot of people
 
 After that they went on to tell us about development for Hololens. They showed us demos of how we can bring over applications that we have made for other platforms like it was nothing. Universal Applications have the ability to make things for Windows Phone, TV, Xbox, Desktop, Tablets, and Hololens all with one project. 
 
-They even went one final step. They brought a couple hundred of them to //Build/ to let developers both try them, and create an application for them.
+They even went one last step. They brought a couple hundred of them to //Build/ to let developers both try them, and create an application for them.
 
 ### Visual Studio Code
 The first thing that Microsoft pushed out was something called Visual Studio Code. This is a light weight editor for use on Mac, Linux, and Windows.
@@ -48,7 +48,7 @@ Microsoft also showed off a new Visual Studio and Blend as well. Coming with Vis
 
 First is the debugger. You are now able to edit code on the fly while you are debugging. No more of that purple line that makes you recompile and run if you change something. It even supports writing something then backing it up and running it again. Crazy right?! It gets better. You can also now use full lambda expressions in both the immediates window, and in your watch list.
 
-They moved on to then show off some of the new renaming systems. When you do a rename you no longer have to deal with that annoying popup window, you can just do it inline without having to leave your keyboard. They even went a step farther to automatically look for conflicts and try to help you solve them. Renaming a new variable to the same name of a property in your object? Oh, that is easy to fix we can just add a `this.` in front of the old use of that name.
+They moved on to then show off some of the new renaming systems. When you do a rename you no longer have to deal with that annoying pop-up window, you can just do it inline without having to leave your keyboard. They even went a step farther to automatically look for conflicts and try to help you solve them. Renaming a new variable to the same name of a property in your object? Oh, that is easy to fix we can just add a `this.` in front of the old use of that name.
 
 That brings me to error handling. There where a huge amount of error handling changes that they showed off, but in general `ctrl + .` is your best friend. It can do way more for you than it ever could.
 

@@ -44,7 +44,7 @@ As you can see, it look a lot like a `LinearLayout` or a `FrameLayout`. However,
 I can't stress enough that the behavior has to be set to the direct child element of `CoordinatedLayout`. Even if the element you are putting the tag on doesn't even scroll (like above) it still goes on that `FrameLayout` even though I will be loading a `RecyclerView` in later. This even works if you are loading a `ViewPager` with `Fragments` containing `RecyclerViews` into that `FrameLayout`. Another good example of this is if you are using a `SwipeRefreshLayout`. Since `SwipeRefreshLayout` is the child of `CoordinatedLayout` you need to put it on there. Then the `RecyclerView` contained in it will have the scroll events fire the behavior.
 
 ##Other uses
-`CoordinatedLayout` also allows you to use an anchor feature. This anchors `FloatingActionButtons` to a specific location on your screen so when a `SnackBar` appears, the button slides up to stay in position. This is also a pretty simple item to implement. All it requires are a couple of attributes on your `FloatingActionButton`. Below is a example of how you would anchor it to the bottom right hand side like it is for standard Material Design. This example will anchor it to the list, so that when you scroll it hides:
+`CoordinatedLayout` also allows you to use an anchor feature. This anchors `FloatingActionButtons` to a specific location on your screen so when a `SnackBar` appears, the button slides up to stay in position. This is also a pretty simple item to implement. All it requires are a couple of attributes on your `FloatingActionButton`. Below is an example of how you would anchor it to the bottom right hand side like it is for standard Material Design. This example will anchor it to the list, so that when you scroll it hides:
 
 {% highlight xml %}
 
@@ -103,7 +103,7 @@ This also allows for `CollapsingToolbarLayout`. This layout is effected by the s
 
 {% endhighlight %}
 
-And then what you can do, is add in the anchored `FloatingActionButton` so that it attaches to the bottom of the action bar. This usually means that the top and the content are related and the action inside of the `FloatingActionButton` effects both areas. This usage is better outlined in the Material Design guidlines here: [Floating Action Button Guidlines](https://goo.gl/aohN7k). Just add this button to the end of the `CoordinatedLayout` that the above `AppBarLayout` is in and you will have the same effect.
+And then what you can do, is add in the anchored `FloatingActionButton` so that it attached to the bottom of the action bar. This usually means that the top and the content are related and the action inside of the `FloatingActionButton` effects both areas. This usage is better outlined in the Material Design guidelines here: [Floating Action Button Guidlines](https://goo.gl/aohN7k). Just add this button to the end of the `CoordinatedLayout` that the above `AppBarLayout` is in and you will have the same effect.
 
 {% highlight xml %}
 

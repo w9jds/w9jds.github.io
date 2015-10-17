@@ -26,7 +26,7 @@ Pretty neat right?
 
 ### In Practice
 
-We are going to start with a standard method which will take the heigh and width you want the resource at and the id of the resource.
+We are going to start with a standard method which will take the height and width you want the resource at and the id of the resource.
 
 {% highlight java %}
 // since this is for a static Util Class pass int he resources as well

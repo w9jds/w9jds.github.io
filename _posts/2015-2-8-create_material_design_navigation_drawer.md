@@ -35,7 +35,7 @@ Along with making sure your main theme is an `AppCompat` theme, not the device d
 
 ### Replacing the ActionBar
 
-Lets start off with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `AppCompatActivity`.
+Lets start with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `AppCompatActivity`.
 
 {% highlight java %}
 
@@ -93,7 +93,7 @@ setSupportActionBar(toolbar);
 
 {% endhighlight %}
 
-The final thing that is missing for our `Toolbar` is the styles. This consists of things like background color, popover color, height, button styles, etc. The next style is for v21 *only*. You'll want use this in a `styles-v21.xml` file.
+The last thing that is missing for our `Toolbar` is the styles. This consists of things like background color, popover color, height, button styles, etc. The next style is for v21 *only*. You'll want use this in a `styles-v21.xml` file.
 
 {% highlight xml %}
 
@@ -199,7 +199,7 @@ First, we need to add in the drawer to our layout. So make your main activity's 
 
 {% endhighlight %}
 
-We have the layout, but now we need to hook it up inside the activity. So we need to add in handling for back button, configuration changes, and toggling. You main activity should start to look something like this:
+We have the layout, but now we need to hook it up inside the activity. So we need to add in handling back button, configuration changes, and toggling. You main activity should start to look something like this:
 
 {% highlight java %}
 
@@ -251,7 +251,7 @@ With this, your navigation drawer will now but up to the bottom of your status b
 ### Making the Drawer full Application Height
 **If you are making a non 5.0 app this section isn't required because it isn't supported until v21**
 
-First you will need to set up a couple properties in a special styles-v21.xml file so that we can force it to be full screen. You should only need `windowDrawsSystemBarBackgrounds` but I like to set a couple other for transitions and stuff so set these:
+First you will need to set up a couple of properties in a special styles-v21.xml file so that we can force it to be full screen. You should only need `windowDrawsSystemBarBackgrounds` but I like to set a couple other transitions and stuff so set these:
 
 {% highlight xml %}
 
@@ -298,7 +298,7 @@ First you will need to set up a couple properties in a special styles-v21.xml fi
 
 {% endhighlight %}
 
-With those styles, you just need to make sure the `DrawerLayout` in your main activity has the `fitsSystemWindow` attribute set to true. This should make the drawer go your statusbar correctly. There is one problem though. Since the statusbar is being drawn there android assumes you don't want your content to start until under your statusbar. So if you put an image on the top for the header (like Google does), you would get a white bar above it. So to fix this you need to add in a custom layout called `ScrimInsetsFrameLayout` which insets the view to get rid of that white bar. That class can be found in this gist:
+With those styles, you just need to make sure the `DrawerLayout` in your main activity has the `fitsSystemWindow` attribute set to true. This should make the drawer go your status bar correctly. There is one problem though. Since the status bar is being drawn there android assumes you don't want your content to start until under your status bar. So if you put an image on the top for the header (like Google does), you would get a white bar above it. So to fix this you need to add in a custom layout called `ScrimInsetsFrameLayout` which insets the view to get rid of that white bar. That class can be found in this gist:
 
 {% include JB/gist gist_id="a753888dd64668ab3efa" %}
 {% include JB/gist gist_id="a753888dd64668ab3efa" gist_file="jekyll-bootstrap.js" %}

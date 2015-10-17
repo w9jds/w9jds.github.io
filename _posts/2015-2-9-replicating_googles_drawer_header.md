@@ -95,7 +95,7 @@ Now I use the same layout for both 21 and previous so mine looks like this:
 
 The header then needs to be added into your drawer inside of your activity. This needs to be done BEFORE you attach an adapter to your listview.
 
-Go to your activity with the drawer and find the onCreate method. I would recommend to make a private member variable for your header since we will be populating it after you have finished logging into the Google Account. We will then find and set the header for the drawer. (Now remember some of this code you probably recognize from the previous walkthrough so make sure it is in this order)
+Go to your activity with the drawer and find the `onCreate` method. I would recommend to make a private member variable for your header since we will be populating it after you have finished logging into the Google Account. We will then find and set the header for the drawer. (Now remember some of this code you probably recognize from the previous walkthrough so make sure it is in this order)
 
 Once you add in you default profile picture, default banner picture, and an adapter (adapter must be set for the header to become visible) you can run this and you should see your header. Now all we have to do is hook up your Google account to it.
 

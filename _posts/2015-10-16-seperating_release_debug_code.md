@@ -3,7 +3,7 @@ layout: post
 title: Separate your Release and Debug only code
 categories: Walkthroughs
 description: How to set up your project to use debug and release specific code.
-tags: [Android, Animations, Walkthrough]
+tags: [Android, Walkthrough]
 image:
   feature: nasa-nebulas.jpg
 comments: true

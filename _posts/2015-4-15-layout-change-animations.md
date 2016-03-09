@@ -12,11 +12,11 @@ comments: true
 share: true
 ---
 
-### Overview
+## Overview
 
 One animation I see a lot, is the slide to open. Usually this is the actual layouts of a view being changed. However, if you just change the height it will just flash open. So I will show you two ways you can actually do this animation.
 
-### ValueAnimation
+## ValueAnimation
 
 The first way you can do this, is by using a `ValueAnimation` (which can be used in an `AnimatorSet`). This animation goes though and changes the value of a set property along a parabola (or any line equation you specifically set into the Interpolator). It then goes to each point on it and then lets you create an equation based on where on that line the animation is at.
 
@@ -57,7 +57,7 @@ set.setInterpolator(new AccelerateDecelerateInterpolator());
 set.start();
 {% endhighlight %}
 
-### Custom Animation
+## Custom Animation
 
 A second more extreme solution, that doesn't seem to always work the way you want, is to create a custom class that extends `Animation`. This is much more flexible and works almost exactly the same as the above `ValueAnimator`. You can make the constructor take in the new height and old height. This also uses the interpolator so you can still set a custom equation. Here is a basic example:
 
@@ -111,7 +111,7 @@ messageView.setAnimation(animation);
 messageView.startAnimation(animation);
 {% endhighlight %}
 
-### Conclusion
+## Conclusion
 
 Both of these will get you the same kind of result, and can be built upon. Be careful though, it doesn't always work in all places. When I made this custom animation class it doesn't work when I used it in a drawer, but `ValueAnimator` did. Here is a gif of what it would look like. (keep in mind the gif makes it look choppy when it really isn't).
 

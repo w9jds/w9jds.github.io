@@ -10,12 +10,12 @@ comments: true
 share: true
 ---
 
-##What is CoordinatedLayout
+## What is CoordinatedLayout
 Recently Google released a new Support library called Design. This library was specifically designed to help the user create Material Design look and feel elements to add into their application without having to create their own custom views. With an added bonus is that it supports lower versions of Android. Inside of this library we got a handful of things, but probably the most powerful tool they released was the `CoordinatedLayout`. This layout allows us to create context aware elements inside of our layouts so that they can behave in a specific way based on different criteria. These are `Behaviors`, and can be specified from a set that Google already made, or by making your own. Some of the animations that `CoordinatedLayout` make possible are: hiding the `FloatingActionButton` on scroll, hiding the `ActionBarLayout` on scroll, swiping away `SnackBar`s,  `FloatingActionButton` moving up when `SnackBar` appears, etc.
 
 It is extremely import to remember that the behavior is REQUIRED to be attached to the direct child of the `CoordinatedLayout`.
 
-##How to use it
+## How to use it
 `CoordinatedLayout` is actually extremely easy to use. All it is, is a standard layout that you include in one of your layout xml files. It will look a bit like this:
 
 {% highlight xml %}
@@ -43,7 +43,7 @@ As you can see, it look a lot like a `LinearLayout` or a `FrameLayout`. However,
 
 I can't stress enough that the behavior has to be set to the direct child element of `CoordinatedLayout`. Even if the element you are putting the tag on doesn't even scroll (like above) it still goes on that `FrameLayout` even though I will be loading a `RecyclerView` in later. This even works if you are loading a `ViewPager` with `Fragments` containing `RecyclerViews` into that `FrameLayout`. Another good example of this is if you are using a `SwipeRefreshLayout`. Since `SwipeRefreshLayout` is the child of `CoordinatedLayout` you need to put it on there. Then the `RecyclerView` contained in it will have the scroll events fire the behavior.
 
-##Other uses
+## Other uses
 `CoordinatedLayout` also allows you to use an anchor feature. This anchors `FloatingActionButtons` to a specific location on your screen so when a `SnackBar` appears, the button slides up to stay in position. This is also a pretty simple item to implement. All it requires are a couple of attributes on your `FloatingActionButton`. Below is an example of how you would anchor it to the bottom right hand side like it is for standard Material Design. This example will anchor it to the list, so that when you scroll it hides:
 
 {% highlight xml %}
@@ -117,7 +117,7 @@ And then what you can do, is add in the anchored `FloatingActionButton` so that 
 
 {% endhighlight %}
 
-##Overview
+## Overview
 `CoordinatedLayout`s are extremely powerful and really help make your applications fluid and nice to use. The support design library really adds loads of functionality to our applications and all it really takes to implement most of them is just a little xml. All of this functionality is packed into a single support library and can be added into your project by adding this to your dependencies in gradle:
 
 {% highlight groovy %}

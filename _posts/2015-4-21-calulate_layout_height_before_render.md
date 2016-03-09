@@ -12,11 +12,11 @@ comments: true
 share: true
 ---
 
-### Overview
+## Overview
 
 Usually when you want to make an animation to show some hidden content, or draw a layout onto a canvas you need to know the dimensions. The issue is that you can't really get them until that view has been rendered to the user. I am going to show you a way to do this without having to render it to the user. I have used this to get specific heights for one item in a `ListView` or full height of a `ListView` allowing me to expand and collapse from one item to all of them. I also used this to replicate the vignette feature from Google Glass to help draw specific things into the top right of an image.
 
-### How it works
+## How it works
 
 We are going to use the built-in system for `Views` called `MeasureSpec`. Basically we are going to give the view parameters on how we would want it measured, and it would then go and get the real dimensions for this device. I will give you two examples of this.
 

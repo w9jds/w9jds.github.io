@@ -12,10 +12,10 @@ comments: true
 share: true
 ---
 
-##Overview
+## Overview
 A couple weeks ago I talked about using `RecyclerView`s in your application and gave you a way to put `OnItemClicked` back into it. That solution only works in specific places and I want to give you another option on how to do it another way. I will also go over a couple other things, like including the ripple animation on your items. The `EnhancedRecyclerViewAdapter` I supplied in my last post showed that you can make an interface inside of your adapter so you can set and store it externally. However, this required the listener to be static so the `ViewHolder` to access it. This causes a problem if you want to use the adapter for multiple `RecyclerView`s at once (even if it is inherited from different adapter instances). So to solve this problem you need to supply the listener in the constructor, and the interface will live inside of the `ViewHolder`.
 
-##OnItemClicked 2
+## OnItemClicked 2
 Like before we want to put the `onClick` inside of our `ViewHolder`. However, instead of referencing a global set up inside the adapter, we want to use a listener that is passed to the constructor of the `ViewHolder`. All of the add methods I showed before still work for this method, so the only thing that should change is the location and declaration of the Listener. It should look something like this:
 
 {% highlight java %}
@@ -100,7 +100,7 @@ public final class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHold
 
 {% endhighlight %}
 
-##Ripple Animations
+## Ripple Animations
 Okay, so you have your `RecyclerView` set up with your adapter set and full of items. However, when you tap any of the items there is no ripple like it does for the items of a `ListView`. This is actually a pretty simple fix. All you need to do is add an attribute to either the foreground, or background of your layout that is being inflated in the `onCreateViewHolder` of your adapter. The base layout element should look like this:
 
 {% highlight xml %}

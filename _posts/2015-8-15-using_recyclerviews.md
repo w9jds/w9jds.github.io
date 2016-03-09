@@ -12,10 +12,10 @@ comments: true
 share: true
 ---
 
-##Overview
+## Overview
 `RecyclerView` is meant to replace the `ListView` since it is built to have better performance handling your recycling and remaking of views. There are a lot of advantages to using them, like a class already made for you to use as a ViewHolder. However, there are some things that are missing from the `RecyclerView` like the `onItemClickedListener`. I'm going to show you how to add that functionality back into your `RecyclerView` along with adding and removing items correctly and letting the adapter know how to animate the changes.
 
-##Fix Missing ItemClickedListener
+## Fix Missing ItemClickedListener
 First thing you will probably notice when you are going to implement your listeners on your new `RecyclerView` is that the `setOnItemClickedListener` method is gone. Don't panic, this is actually pretty easy to add back in. Go inside of your adapter you have set up for your `RecyclerView` and add in an interface like so:
 
 {% highlight java %}
@@ -141,7 +141,7 @@ public void clear() {
 
 With that you are all set! 
 
-##Bonus
+## Bonus
 
 I did end up making an `EnhancedRecyclerViewAdapter` that you can throw into your appliation so that all you do is make an adapter and it handles everything for you if you extend it. It can be found here:
 

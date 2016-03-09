@@ -10,10 +10,10 @@ comments: true
 share: true
 ---
 
-##Overview
+## Overview
 I'm sure you have things you want to only include inside of your project when you are making a debug build or a release build. I'm going to walk you through a way to manage this code, so you don't have to manually remove/comment it out ever time you wanted to change your build type. This walkthrough will show you how to set up your project to use [Stetho](http://facebook.github.io/stetho/) for debug builds and [Crashlytics](https://get.fabric.io/) for release builds.
 
-##Gradle Setup
+## Gradle Setup
 There are actually two different compile types that let you only include specific dependencies for different build types. So for Stetho on debug and Crashlytics on release, it should look like this:
 
 {% highlight groovy %}
@@ -28,7 +28,7 @@ releaseCompile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
 
 {% endhighlight %}
 
-##Build Folders
+## Build Folders
 Inside of `*/src/` we need to create two new folders, `debug` and `release`. Inside of both of these folders, create a `java` folder. If you want to make a specific namespace this is where it would go. Since we are setting up libraries that require initialization we need to create some application classes to use. If you already have an application class, just extend these two from that one. Create these two classes in their corresponding java folders. 
 
 {% highlight java %}
@@ -57,7 +57,7 @@ public final class ReleaseApplication extends MyApplication {
 
 {% endhighlight %}
 
-##Additional Android Manifests
+## Additional Android Manifests
 Now all we have to do is let gradle know that we want to replace the application name property depending on the build we wanted. This requires us to create two new `AndroidManifest.xml` files. These files should sit direct childs of the `debug` and `release` folders and should look like these:
 
 {% highlight xml %}

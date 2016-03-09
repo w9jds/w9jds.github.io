@@ -10,10 +10,10 @@ comments: true
 share: true
 ---
 
-##Overview
+## Overview
 I'm sure by now, everyone has used the support library's `Toolbar` element. Inside of this element are things like the `ActionMenu` and Title. However, since this is a packaged element. We don't have access to the child views of this view. So I am going to show you how to get the title and attach animations to it for smoothly transitioning between title changes.
 
-##Toolbar
+## Toolbar
 Now, in order for us to use the `Toolbar` we first need to have one in the layout. So make sure you have the style set to no actionbar, and make sure you have a varient of the following in your layout:
 
 {% highlight xml %}
@@ -36,7 +36,7 @@ Now, in order for us to use the `Toolbar` we first need to have one in the layou
 
 Now when you start your activity, you won't need to do anything different. However, there is one thing you should take into account. If you set your title to an empty string, then the `TextView` will be removed from the `Toolbar` so if you plan on animating your title, you should set your title to ' ' if you want to have an empty title.
 
-##Finding the TextView
+## Finding the TextView
 Seeing as how we don't actually hae access to the children of the `Toolbar` we will have to do a pretty nasty search for it. What you will need to do is iterate over each child of the `Toolbar` until you find a `TextView`. You need to do this on the `Toolbar` not the support `ActionBar` you are setting the `Toolbar` to when you start an activity! It should look something like this:
 
 {% highlight java %}
@@ -53,7 +53,7 @@ private View getToolbarTitle() {
 }
 {% endhighlight %}
 
-##Animating Title Change
+## Animating Title Change
 When you finally have the view for your title, you can just run an animation like you usually would. For this example I just set up an `AlphaAnimation` that fades the title out of view, updates the value, then fades it back in. Here is what it looks like:
 
 {% highlight java %}

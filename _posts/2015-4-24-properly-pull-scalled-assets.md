@@ -12,19 +12,19 @@ comments: true
 share: true
 ---
 
-### Overview
+## Overview
 
 I'm going to show you how to properly pull in a scaled asset (specifically drawables) for either Android or Android Wear. Currently I see a lot of `Bitmap.createScaledBitmap` even in Google's example projects for their Watch Faces. However, this is extremely inefficient and can slow things down. If you are using that, then you have already loaded the full image into memory and are now adding a new version of it (just smaller) to your memory.
 
 So I am going to show you the correct way to do it. This code is also formatted so you can throw it into a `Util` class and use it everywhere.
 
-### How it's done
+## How it's done
 
 Android specifically has a Class that helps us with building and working with images, and it is called `BitmapFactory`. Using this we can actually "decode" the image file to get a little bit of metadata that we need to calculate the new size. Then pull it at that size without having to actually fully load the image twice!
 
 Pretty neat right?
 
-### In Practice
+## In Practice
 
 We are going to start with a standard method which will take the height and width you want the resource at and the id of the resource.
 

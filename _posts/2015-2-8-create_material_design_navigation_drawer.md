@@ -12,11 +12,11 @@ comments: true
 share: true
 ---
 
-### Overview
+## Overview
 
 Currently at the moment there isn't really a guide on how to get a fully material design compliant drawer on android 5.0. So this is going to be a walkthrough on how to do exactly that.
 
-### Setup
+## Setup
 
 Your targeting api should probably be v21+ (or android 5.0+) and you can either do `no activities` or a `blank activity`. You will want to immediately check out your build.gradle and make sure you have the `appcompat` dependency is in there. (Note: this is usually automatically included for you).
 
@@ -33,7 +33,7 @@ Along with making sure your main theme is an `AppCompat` theme, not the device d
 <item name="windowActionBar">false</item>
 {% endhighlight %}
 
-### Replacing the ActionBar
+## Replacing the ActionBar
 
 Lets start with how to get the drawer out from under the action bar. By default when you add a drawer to your application it will appear under your action bar. To rectify this, you need to use a toolbar instead of the default `ActionBar`. When you added `windowActionBar` to your theme, you where actually turning that actionbar off. To get back that actionBar we need to change the activity to `AppCompatActivity`.
 
@@ -131,7 +131,7 @@ The last thing that is missing for our `Toolbar` is the styles. This consists of
 
 {% endhighlight %}
 
-### Setup the Navigation Drawer
+## Setup the Navigation Drawer
 
 First, we need to add in the drawer to our layout. So make your main activity's layout look something like this:
 
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
 
 With this, your navigation drawer will now but up to the bottom of your status bar. However, in the material design principles they make it clear they want a transparent status bar to draw **OVER** the drawer.
 
-### Making the Drawer full Application Height
+## Making the Drawer full Application Height
 **If you are making a non 5.0 app this section isn't required because it isn't supported until v21**
 
 First you will need to set up a couple of properties in a special styles-v21.xml file so that we can force it to be full screen. You should only need `windowDrawsSystemBarBackgrounds` but I like to set a couple other transitions and stuff so set these:

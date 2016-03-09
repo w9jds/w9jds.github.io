@@ -11,12 +11,12 @@ comments: true
 share: true
 ---
 
-### Overview
+## Overview
 Starting on the 29th Microsoft kicked off //Build/ 2015. For developers that watched at home and attended the event, we expected huge news about Hololens and Windows 10.
 
 What we got? So much more.
 
-### Windows Phone
+## Windows Phone
 Lets start with what new things we have for Windows Phone. The biggest announcement was that Microsoft will now support you bring over Objective C (from your iOS apps) and Java (from your Android apps). This means that if you have an iOS or Android app you can bring it over to Windows Phone while changing very little amount of code. The best example they gave was Candy Crush by King. That is an iOS app brought over to Windows Phone. 
 
 For iOS you can literally pull the iOS project into Visual Studio, and with a few tweaks should be able to get it fully running without a huge refactoring. 
@@ -25,14 +25,14 @@ For Android you apparently don't even have to bring it into Visual Studio. You a
 
 Finally we got to see a deep dive into what to expect from Windows 10 on the phone. One of the coolest things about this is Continuum. This allows you to plug your phone into a monitor and have a fully functional computer at your disposal. With Universal Apps, this allows the App to fully scale to the new screen without issue and work just like it would on a standard desktop. This greatly changes the game because in some places the only smart devices people have are phones.
 
-### Hololens
+## Hololens
 When Microsoft showed off Hololens at the beginning of the year, a lot of people where skeptical. Their first reactions where somewhere along the lines of "Yeah, okay. That video is totally fake." However, when Hololens entered the stage this week, it blew everyone away. Not only were they able to deliver on what they had originally showed off. They went even farther. Guests from different fields took stage to show off what they have been able to accomplish with this new device. We had Makers, Doctor, and Architects, and that is only the beginning.
 
 After that they went on to tell us about development for Hololens. They showed us demos of how we can bring over applications that we have made for other platforms like it was nothing. Universal Applications have the ability to make things for Windows Phone, TV, Xbox, Desktop, Tablets, and Hololens all with one project. 
 
 They even went one last step. They brought a couple hundred of them to //Build/ to let developers both try them, and create an application for them.
 
-### Visual Studio Code
+## Visual Studio Code
 The first thing that Microsoft pushed out was something called Visual Studio Code. This is a light weight editor for use on Mac, Linux, and Windows.
 
 Yes, you heard that right.
@@ -43,7 +43,7 @@ You also read that correctly as well. Microsoft has released an editor with Visu
 
 Check it out here: [Get Visual Studio Code!](http://code.visualstudio.com)
 
-### Visual Studio
+## Visual Studio
 Microsoft also showed off a new Visual Studio and Blend as well. Coming with Visual Studio 2015 is their new open source compiler Roslyn, along with a whole new IDE. For people that have been using Visual Studio for years, it doesn't look to new, but they built it from the ground up and added LOADS of new features. Unfortunately I can't cover all of them, but I can hit some of the big ones.
 
 First is the debugger. You are now able to edit code on the fly while you are debugging. No more of that purple line that makes you recompile and run if you change something. It even supports writing something then backing it up and running it again. Crazy right?! It gets better. You can also now use full lambda expressions in both the immediates window, and in your watch list.
@@ -58,7 +58,7 @@ We also finally have an offical Github Extension directly built into Visual Stud
 
 Finally, They announced that they are partnering with Docker to bring offical Docker support to Visual Studio. You can now install the extension and you can build and publish ASP.Net v5 web or console apps directly to a container running on a Linux VM. You can find this extension here: [Get Docker Extension](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0)
 
-### C# and XAML
+## C# and XAML
 With .Net 6 they aren't going to be changing so much that it will cause us to relearn things all over again. Such a relief right? They even made some quality of life changes to help make our lives easier. Keep in mind these are just a few of the big ones, there are so many more that I won't cover.
 
 One huge one is that they are working on bring XAML debugging and binding debugging either in this release or the next one.

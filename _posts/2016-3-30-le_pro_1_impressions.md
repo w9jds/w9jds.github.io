@@ -5,8 +5,7 @@ categories: Reviews
 description: I'm going over what I think of the Le 1 Pro Phone from LeTv.
 tags: [Reviews, First Impressions, LeTv]
 image:
-  feature: http://mikeshouts.com/wp-content/uploads/2015/04/Letv-Le-Superphones-Le-Max-image-3-630x420.jpg
-  credit: mikeshouts
+  feature: LeTV-Le-One-Pro-le-1-pro.jpg
 comments: true
 share: true
 ---

@@ -10,7 +10,7 @@ comments: true
 share: true
 ---
 
-As a Le Champ I was given the privilege of getting to test out the Le 1 Pro early, and these are my impressions of the phone. Note, these are MY opinions, not LeEco's.
+As a Le Champ I was given the privilege of getting to test out the Le 1 Pro, and these are my impressions of the phone. Note, these are MY opinions, not LeEco's.
 
 ## Packaging
 When you first get the Le Pro 1, it comes in a pretty sleek-looking black box. As you slide open the top you are greeted with the first view of the Le Pro 1. One of the things to most stand out, is that the phone is already sitting in a clear phone case. I must say that is a huge shocker and a very nice addition, especially since it doesn't seem to be the cheap kind of case. As you pull out the phone you will find the power brick and USB C cable in the bottom with an added bonus of a USB A to USB C adapter in their. It is kind of odd that the brick is separated into two different boxes but other than that, right away it seems you get a couple free additions that are pretty nice.

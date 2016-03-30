@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Le Pro 1, What I think.
+title: Le 1 Pro, What I think.
 categories: Reviews
 description: I'm going over what I think of the Le 1 Pro Phone from LeTv.
 tags: [Reviews, First Impressions, LeTv]
